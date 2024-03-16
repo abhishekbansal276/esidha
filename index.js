@@ -1,10 +1,12 @@
 const express = require("express");
 const session = require("express-session");
+const path = require('path');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.set("views", path.join(__dirname, "routes"));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
